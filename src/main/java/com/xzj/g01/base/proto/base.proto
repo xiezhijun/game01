@@ -1,0 +1,12 @@
+package proto;
+
+option java_package = "com.xzj.g01.base.proto.base";
+option java_outer_classname = "BaseProtoBuffer";
+
+message StrProto{
+	optional string param = 1;
+}
+
+message IntProto{
+	optional int32 param = 1;
+}

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	    <property name="driverClass" value="${jdbc.driver}"/>
+	    <property name="jdbcUrl" value="${jdbc.url}"/>
+	    <property name="user" value="${jdbc.username}"/>
+	    <property name="password" value="${jdbc.password}"/>
+	    <property name="acquireIncrement" value="${c3p0.acquireIncrement}" />
+		<property name="maxIdleTime" value="${c3p0.maxIdleTime}" />
+		<property name="initialPoolSize" value="${c3p0.initialPoolSize}" />
+		<property name="minPoolSize" value="${c3p0.minPoolSize}" />
+		<property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
+		<property name="numHelperThreads" value="${c3p0.numHelperThreads}" />
+		<property name="maxStatements" value="${c3p0.maxStatements}" />
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<!-- 自动扫描mapping.xml文件 -->
+        <property name="mapperLocations" value="classpath:static/mapper/*.xml"></property>
+	</bean>
+	
+	<!-- 配置mapper扫描器，扫描所有mapper接口 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	    <property name="basePackage" value="com.xzj.g01.base.dao.mapper"></property>
+	    <!-- 注意，此处有坑 -->
+	    <!-- 如果使用 <property name="sqlSessionFactory" ref="sqlSessionFactory"/> 这个配置，
+	    	进行自动扫描的时候，设置了sqlSessionFactory 的话，可能会导致PropertyPlaceholderConfigurer失效，
+	    	也就是用${jdbc.username}这样之类的表达式会获取不到属性值-->
+	    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+	</bean> 
+	
+	
+	<!-- 配置Spring的事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+</beans>
