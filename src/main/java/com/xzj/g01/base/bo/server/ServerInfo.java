@@ -1,6 +1,9 @@
 package com.xzj.g01.base.bo.server;
 
-public class ServerInfo {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class ServerInfo implements Serializable{
 	
 	private Integer id;
 	
