@@ -10,9 +10,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
-import com.ebo.synframework.nettybase.dispatcher.ReqCmd;
 import com.xzj.g01.dispatch.bo.DispatchContext;
 import com.xzj.g01.dispatch.bo.DispatcherClient;
+import com.xzj.game_base.nettybase.dispatcher.ReqCmd;
 
 @Component
 public class DispatchClientMsgHandler extends SimpleChannelUpstreamHandler implements ApplicationContextAware{

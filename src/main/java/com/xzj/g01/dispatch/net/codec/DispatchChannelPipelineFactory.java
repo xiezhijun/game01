@@ -5,7 +5,7 @@ import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.jboss.netty.channel.ChannelUpstreamHandler;
 import org.jboss.netty.channel.Channels;
 
-import com.ebo.synframework.nettybase.codec.LengthFieldBasedFrameDecoder;
+import com.xzj.game_base.nettybase.codec.LengthFieldBasedFrameDecoder;
 
 
 public class DispatchChannelPipelineFactory implements ChannelPipelineFactory{

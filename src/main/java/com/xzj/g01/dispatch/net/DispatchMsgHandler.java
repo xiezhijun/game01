@@ -12,11 +12,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
-import com.ebo.synframework.nettybase.dispatcher.CmdDispatcher;
-import com.ebo.synframework.nettybase.dispatcher.ReqCmd;
 import com.google.protobuf.Message;
 import com.xzj.g01.base.proto.base.BaseProtoBuffer.StrProto;
 import com.xzj.g01.dispatch.bo.DispatcherServer;
+import com.xzj.game_base.nettybase.dispatcher.CmdDispatcher;
+import com.xzj.game_base.nettybase.dispatcher.ReqCmd;
 
 
 /**

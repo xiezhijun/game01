@@ -4,8 +4,8 @@ import org.apache.log4j.Logger;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandlerContext;
 
-import com.ebo.synframework.synroom.executor.SynRoomPlayer;
 import com.google.protobuf.Message.Builder;
+import com.xzj.game_base.synroom.executor.SynRoomPlayer;
 
 /**
  * 连接客户端

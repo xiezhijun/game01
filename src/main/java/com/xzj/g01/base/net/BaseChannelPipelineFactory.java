@@ -5,8 +5,8 @@ import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.jboss.netty.channel.ChannelUpstreamHandler;
 import org.jboss.netty.channel.Channels;
 
-import com.ebo.synframework.nettybase.codec.ProtoDecoder;
-import com.ebo.synframework.nettybase.codec.ProtoEncoder;
+import com.xzj.game_base.nettybase.codec.ProtoDecoder;
+import com.xzj.game_base.nettybase.codec.ProtoEncoder;
 
 public class BaseChannelPipelineFactory implements ChannelPipelineFactory{
 

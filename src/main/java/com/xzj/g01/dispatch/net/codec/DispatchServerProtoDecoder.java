@@ -6,9 +6,9 @@ import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.handler.codec.oneone.OneToOneDecoder;
 
-import com.ebo.synframework.nettybase.codec.ProtoFactory;
-import com.ebo.synframework.nettybase.dispatcher.ReqCmd;
 import com.google.protobuf.GeneratedMessage;
+import com.xzj.game_base.nettybase.codec.ProtoFactory;
+import com.xzj.game_base.nettybase.dispatcher.ReqCmd;
 
 public class DispatchServerProtoDecoder extends OneToOneDecoder {
 

@@ -10,7 +10,7 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 	
 	<context:annotation-config/>
-	<context:component-scan base-package="com.xzj.g01,com.ebo.synframework"></context:component-scan>	
+	<context:component-scan base-package="com.xzj"></context:component-scan>	
 	
 	<context:property-placeholder location="classpath:config/*.properties"/>
 	

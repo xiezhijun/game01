@@ -5,18 +5,16 @@ import java.sql.Date;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import redis.clients.jedis.Jedis;
-
-import com.ebo.synframework.nettybase.codec.ProtoFactory;
 import com.xzj.g01.base.bo.server.ServerInfo;
 import com.xzj.g01.base.data.ServerInfoData;
 import com.xzj.g01.base.scheduler.MyScheduler;
 import com.xzj.g01.base.scheduler.RefreshServerInfoJob;
 import com.xzj.g01.dispatch.bootstrap.DispatchBootstrap;
 import com.xzj.g01.login.global.LoginBootstrap;
+import com.xzj.game_base.nettybase.codec.ProtoFactory;
 
 /**
- * 测试时用，实际中用servlet初始化更好
+ * 启动类
  * @author zane
  * @Time 2018-5-7 下午4:11:28
  */
